@@ -36,7 +36,7 @@ import java.util.List;
 @Controller
 public class OpgaveController
 {
-    /**
+    /**Bøf
      *  Autowire interfacet fra IOpgaveService, som er blevet implementeret af OpgaveService.
      *  Kan derved kalde på metoder derfra.
      */
