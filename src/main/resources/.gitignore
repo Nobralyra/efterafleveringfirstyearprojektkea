@@ -2,3 +2,4 @@
 /target/
 /firstyearprojektkea.iml
 /src/main/resources/application.properties
+*.properties
