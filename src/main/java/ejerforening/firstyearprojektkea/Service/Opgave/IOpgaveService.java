@@ -24,7 +24,7 @@ public interface IOpgaveService
 
     void slet(int opgaveId);
 
-    boolean OpretOpgave (Opgave opgave);
+    int OpretOpgave (Opgave opgave);
 
     boolean OpgaveOplysningerOprettet(OpgaveOplysninger opgaveOplysninger);
 }
