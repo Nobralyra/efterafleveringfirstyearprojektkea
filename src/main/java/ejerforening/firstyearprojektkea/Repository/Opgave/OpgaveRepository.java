@@ -128,14 +128,14 @@ public class OpgaveRepository implements IOpgaveRepository
      * @return
      */
     @Override
-    public boolean opretOpgave(Opgave opgave)
+    public int opretOpgave(Opgave opgave)
     {
         String navn = opgave.getNavn();
         LocalDate oprettelsesDato = LocalDate.now();
         String sql = "INSERT INTO opgave(navn, oprettelsesDato) VALUES(?,?)";
         int opgaveOpdateret  = jdbcTemplate.update(sql, navn, oprettelsesDato);
 
-        return true;
+        return opgaveOpdateret;
     }
 
 
