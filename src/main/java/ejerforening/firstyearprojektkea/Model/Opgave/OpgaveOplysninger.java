@@ -29,7 +29,7 @@ public class OpgaveOplysninger
 
     private int opgaveId;
 
-    @NotBlank(message = "Indtast venligst navnet på opgaven")
+    //@NotBlank(message = "Indtast venligst navnet på opgaven")
     private String navn;
 
     private LocalDate oprettelsesDato;
