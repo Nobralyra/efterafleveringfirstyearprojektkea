@@ -169,6 +169,7 @@ public class OpgaveController
     @PostMapping("/opgave/opretOpgaveIndhold")
     public String opretOpgaveIndhold(@Valid Opgave opgave, BindingResult bindingResult, Model model)
     {
+        int opgaveId = 0;
         if(bindingResult.hasErrors())
         {
             model.addAttribute("bindingResult", bindingResult);
@@ -178,7 +179,7 @@ public class OpgaveController
 
         try
         {
-            iOpgaveService.OpretOpgave(opgave);
+           opgaveId =  iOpgaveService.OpretOpgave(opgave);
         }
         catch (Exception e)
         {
@@ -187,7 +188,7 @@ public class OpgaveController
             return "/opgave/opret";
         }
 
-        return "redirect:/opgave/opretOpgaveOplysninger";
+        return "redirect:/opgave/opretOpgaveOplysninger/{opgaveId}";
     }
 
     /**
@@ -197,8 +198,9 @@ public class OpgaveController
      * @param model fragter de felter der kan indsaettes data i.
      * @return /opgave/opretOplysningerIndhold - html
      */
-    @GetMapping("/opgave/opretOpgaveOplysninger")
-    public String opretOpgaveOplysninger(OpgaveOplysninger opgaveOplysninger, Model model){
+    @GetMapping("/opgave/opretOpgaveOplysninger/{opgaveId}")
+    public String opretOpgaveOplysninger(int opgaveId, OpgaveOplysninger opgaveOplysninger, Model model){
+        opgaveOplysninger.setOpgaveId(opgaveId);
         model.addAttribute("opgaveOplysninger", opgaveOplysninger);
         return "/opgave/opretOplysningerIndhold";
     }
