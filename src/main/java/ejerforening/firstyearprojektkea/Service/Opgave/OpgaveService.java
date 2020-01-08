@@ -57,10 +57,10 @@ public class OpgaveService implements IOpgaveService
     }
 
     @Override
-    public boolean OpretOpgave (Opgave opgave)
+    public int OpretOpgave (Opgave opgave)
     {
-        boolean opretOpgave = iOpgaveRepository.opretOpgave(opgave);
-        return true;
+        int opretOpgave = iOpgaveRepository.opretOpgave(opgave);
+        return opretOpgave;
     }
 
     @Override
