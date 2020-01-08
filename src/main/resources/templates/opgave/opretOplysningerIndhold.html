@@ -19,6 +19,7 @@
 
             <form action="#" th:action="@{/opgave/opretOpgaveOplysningerIndhold}" method="post">
                     <div class="form-group">
+                        <input type="hidden" th:field="*{opgaveOplysninger.opgaveId}">
                         <label for="Beskrivelse">Beskrivelse</label>
                         <textarea input th:field="*{opgaveOplysninger.beskrivelse}" class="form-control" id="Beskrivelse" rows="3" required="required" placeholder="Hvad er beskrivelsen på opgaven?"></textarea>
                         <span th:if="${#fields.hasErrors('opgaveOplysninger.beskrivelse')}" th:errors="*{opgaveOplysninger.beskrivelse}">Fejl i beskrivelse></span>
