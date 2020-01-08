@@ -23,7 +23,7 @@ public interface IOpgaveRepository
 
     void slet(int opgaveId);
 
-    boolean opretOpgave(Opgave opgave);
+    int opretOpgave(Opgave opgave);
 
     boolean opretOplysninger(OpgaveOplysninger opgaveOplysninger);
 }
